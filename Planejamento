@@ -1,0 +1,15 @@
+Sistema de votação feito em C;
+Até o instante nos foi passado a quantia de 3 chapas, então nosso programa será feito para 3 chapas;
+O sistema deve ter 4 opções de voto, sendo elas: 3 para chapas (a,b,c) e 1 para o voto nulo;
+É importante fazer com que os votos digitados de forma incorreta sejam registrado e contado como nulo!;
+Além dessas opções, colocar um código em número para encerrar, para evitar que algum eleitor encerrer o programa;
+Ao encerrar, deverá mostrar na tela a quantia de votos totais, votos de cada candidato e a quantia de votos nulos;
+Após isso o programa irá finalizar por completo sem que ocorra nenhum salvamento;
+Nada ficará salvo, todos os dados após o encerramento serão perdidos;
+Não perguntar nada além de qual candidato o eleitor irá votar, os votos tem que ser secretos;
+Prazo máximo de até 11/03;
+A parte gráfica será algo simples e intuitivo, algo que ajude o eleitor chegar, votar e se retirar;
+Testaremos de diferentes formas, sendo elas: voto combinado (votação será pré-determinada), voto único (todos irão votar no
+mesmo candidato), voto aleatório (cada ajudante irá votar em sua escolha), voto nulo (todos os votos serão realizados no nulo),
+o cliente/direção irá testar o programa antes da finalização para ver se o que foi pedido foi realizado;
+Comparar os resultados dos votos com os objetivos estabelecidos.
