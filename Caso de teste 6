@@ -1,0 +1,7 @@
+Resumo:certificar que ao encerrar o sistema, ele seja encerrado corretamentee e não haja nenhum voto.
+
+Pré-condição: o sistema estar ativo.
+
+Entrada: clicar no botão correspondente ao encerramento.
+
+Pós-condições: o sistema deve ser encerrado e o número de votos deve ser 0
