@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <title>Votacao</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <form class="formulario_teste">
+        <fieldset>
+            <div class<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <title>Votacao</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+       <div id="output">
+            <!-- Aqui serão exibidos os resultados -->
+        </div>
+
+        <script>
+            let chapa1 = 0;
+            let chapa2 = 0;
+            let chapa3 = 0;
+            let nulos = 0;
+            let total_votos = 0;
+
+            function atualizarResultado() {
+                let porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
+                let porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
+                let porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
+                let porcentagem_nulos = (nulos * 100.0) / total_votos;
+
+                let output = document.getElementById("output");
+                output.innerHTML = `
+                    <p>Total de votos: ${total_votos}</p>
+                    <p>Candidato A (chapa1): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                    <p>Candidato B (chapa2): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                    <p>Candidato C (chapa3): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                    <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
+                    <p>-------------<br><b>Sistema de votação</b><br><span class="blink"> 3ºNOVOTEC</span> Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
+                    <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
+                    `;
+            }
+
+            function realizarVotacao() {
+                let voto = parseInt(prompt("Escolha seu candidato ou tecle zero para encerrar:\n\n1 -> Chapa1\n2 -> Chapa2\n3 -> Chapa3\n\nQualquer número diferente de 0, 1, 2 e 3 anulará o seu voto"));
+
+                if (voto === 0) {
+                    alert("Votação encerrada!");
+                } else if (voto === 1) {
+                    chapa1++;
+                } else if (voto === 2) {
+                    chapa2++;
+                } else if (voto === 3) {
+                    chapa3++;
+                } else {
+                    nulos++;
+                }
+
+                total_votos = chapa1 + chapa2 + chapa3 + nulos;
+                atualizarResultado();
+
+                if (voto !== 0) {
+                    realizarVotacao();
+                }
+            }
+
+            realizarVotacao();
+        </script>
+    </body>
+</html><!--P. Rodrigo Georgino, para o 3ºNOVOTEC, Escola IVONY DE CAMARGO SALLES-->="Chapa1">
+               
+        <div id="output">
+            <!-- Aqui serão exibidos os resultados -->
+        </div>
+
+        <script>
+            let chapa1 = 0;
+            let chapa2 = 0;
+            let chapa3 = 0;
+            let nulos = 0;
+            let total_votos = 0;
+
+            function atualizarResultado() {
+                let porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
+                let porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
+                let porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
+                let porcentagem_nulos = (nulos * 100.0) / total_votos;
+
+                let output = document.getElementById("output");
+                output.innerHTML = `
+                    <p>Total de votos: ${total_votos}</p>
+                    <p>Candidato A (chapa1): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                    <p>Candidato B (chapa2): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                    <p>Candidato C (chapa3): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                    <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
+                    <p>-------------<br><b>Sistema de votação</b><br><span class="blink"> 3ºNOVOTEC</span> Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
+                    <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
+                    `;
+            }
+
+            function realizarVotacao() {
+                let voto = parseInt(prompt("Escolha seu candidato ou tecle zero para encerrar:\n\n1 -> Chapa1\n2 -> Chapa2\n3 -> Chapa3\n\nQualquer número diferente de 0, 1, 2 e 3 anulará o seu voto"));
+
+                if (voto === 0) {
+                    alert("Votação encerrada!");
+                } else if (voto === 1) {
+                    chapa1++;
+                } else if (voto === 2) {
+                    chapa2++;
+                } else if (voto === 3) {
+                    chapa3++;
+                } else {
+                    nulos++;
+                }
+
+                total_votos = chapa1 + chapa2 + chapa3 + nulos;
+                atualizarResultado();
+
+                if (voto !== 0) {
+                    realizarVotacao();
+                }
+            }
+
+            realizarVotacao();
+        </script>
+    </body>
+</html><!--P. Rodrigo Georgino, para o 3ºNOVOTEC, Escola IVONY DE CAMARGO SALLES-->
