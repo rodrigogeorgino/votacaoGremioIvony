@@ -6,34 +6,7 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <form class="formulario_teste">
-        <fieldset>
-            <div class="Chapa1">
-                <input class="caixa_txt" type="text" name="txt_chapa1">
-                <label class="label_chapa" for="">Chapa1:</label>
-            </div>
-            <br><br>
-            <div class="Chapa2">
-                <input class="caixa_txt2" type="text" name="txt_chapa2">
-                <label class="label_chapa" for="">Chapa2:</label>
-            </div>
-            <br><br>
-            <div class="Chapa3">
-                <input class="caixa_txt3" type="text" name="txt_chapa3">
-                <label class="label_chapa" for="">Chapa3:</label>
-            </div>
-            <br><br>
-            <div class="VTnulo">
-                <input class="caixa_txt3" type="text" name="txt_vtnulo">
-                <label class="label_chapa" for="">Voto Nulo:</label>
-            </div>
-            <br><br>
-            <div class="div_botao">
-                <input type="submit" name="o_site" id="botao">
-            </fieldset>
-        </form>
-
-        <div id="output">
+       <div id="output">
             <!-- Aqui serão exibidos os resultados -->
         </div>
 
