@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"><title>Sistema de Votação Ivoni Camargo Salles</title>
+    <style type="text/css">/*espaço para CSS usei o blink como exemplo*/
+        .blink {
+                  animation: blink 1s steps(1, end) infinite;
+                }
+
+                @keyframes blink {
+                  0% {
+                    opacity: 1;
+                  }
+                  50% {
+                    opacity: 0;
+                  }
+                  100% {
+                    opacity: 1;
+                  }
+                }
+    </style>
+</head>
+<body>
+    <h1>Resultado da Votação </h1>
+    <!--EXPLICAÇÃO 1 -  DA DIV CSS !!!!!********************************************************************************
+        DIV OUTPUT NO HTML
+
+        Vou explicar a idéia por trás do elemento `<div>` com o atributo `id="output"` no HTML, bem como a sua ligação com o JavaScript.
+
+        1. **Elemento `<div>` com `id="output"`:**
+
+           O elemento `<div>` é uma tag HTML usada para criar uma divisão ou container genérico em uma página da web. Ele não possui nenhum significado específico por si só, mas é frequentemente usado para agrupar elementos relacionados ou para criar áreas separadas na página para exibir conteúdo.
+
+           No exemplo que você deu, há um elemento `<div>` com o atributo `id="output"`. Isso significa que esse `<div>` em particular está sendo identificado com um nome único chamado "output". A utilização do atributo `id` é uma forma de identificar um elemento HTML para poder manipulá-lo com JavaScript.
+         -->
+    <div id="output"></div>
+
+
+    <!-- EXPLICACAO 2 - DA PALAVRA LET ********************************************************************************
+        `let` é uma palavra-chave introduzida no JavaScript para declarar variáveis locais com escopo de bloco. 
+        Antes da introdução do `let`, a declaração de variáveis era feita usando `var`, mas isso tinha algumas implicações de escopo e comportamento que podiam ser confusas.
+
+        A principal diferença entre `let` e `var` está no escopo. Enquanto as variáveis declaradas com `var` têm escopo de função (ou global, se declaradas fora de funções), as variáveis declaradas com `let` têm escopo de bloco. Isso significa que uma variável declarada com `let` só é visível e acessível dentro do bloco em que foi declarada. Vamos usar no bloco de candidatos a e b 
+
+        EXPLICACAO 3 - DA FUNÇÃO criada atualizarResultado********************************************************************************
+        Função atualizarResultado()
+        Esta função é responsável por atualizar a exibição dos resultados da votação na página HTML. Ela calcula as porcentagens de votos para cada candidato e exibe os resultados formatados na div chamada "output". Aqui está o que a função faz:
+
+        Calcula as porcentagens de votos para cada candidato e para votos em branco e nulos.
+        Atualiza o conteúdo da div "output" com as informações sobre os totais de votos, votos para cada candidato e as porcentagens.
+        As porcentagens são formatadas usando o método toFixed(2) para exibir duas casas decimais.
+        Função realizarVotacao()
+        Esta função implementa a lógica para coletar votos dos usuários e atualizar os resultados. Ela utiliza a função prompt() para coletar o voto do usuário e, em seguida, toma uma ação com base no voto fornecido. Aqui está o que a função faz:
+
+        Usa prompt() para solicitar ao usuário que escolha um candidato digitando 1 ou 2, ou vote em branco digitando 3. Qualquer outro número é considerado um voto nulo.
+        Dependendo do voto fornecido, atualiza as variáveis candidato_a, candidato_b, brancos ou nulos.
+        Atualiza a variável total_votos somando todas as opções de voto.
+        Chama a função atualizarResultado() para exibir os resultados atualizados na página.
+        Se o voto não for 0 (encerramento da votação), chama recursivamente a função realizarVotacao() para coletar mais votos.
+        Essa estrutura recursiva permite que o programa continue coletando votos até que o usuário decida encerrar a votação digitando 0. Nesse ponto, a função atualizarResultado() é chamada para exibir os resultados finais ponto, a função atualizarResultado() é chamada para exibir os resultados finais.
+
+    -->
+    <script>
+        let chapa1 = 0;
+        let chapa2 = 0;
+        let chapa3 = 0;
+        let nulos = 0;
+        let total_votos = 0;
+
+        function atualizarResultado() {
+            let porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
+            let porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
+            let porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
+            let porcentagem_nulos = (nulos * 100.0) / total_votos;
+            
+            let output = document.getElementById("output");
+            output.innerHTML = `
+                <p>Total de votos: ${total_votos}</p>
+                <p>Candidato A (chapa1): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                <p>Candidato B (chapa2): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                <p>Candidato C (chapa3): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
+                <p>-------------<br><b>Sistema de votação</b><br><span class="blink"> 3ºNOVOTEC</span> Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
+                <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
+                `;
+                                        }/*atualizado resultado :) */
+
+
+        function realizarVotacao() {
+            let voto = parseInt(prompt("Escolha seu candidato ou tecle zero para encerrar:\n\n1 -> Chapa1\n2 -> Chapa2\n3 -> Chapa3\n\nQualquer número diferente de 0, 1, 2 e 3 anulará o seu voto"));
+            
+            if (voto === 0) {
+                alert("Votação encerrada!");
+            } else if (voto === 1) {
+                chapa1++;
+            } else if (voto === 2) {
+                chapa2++;
+            } else if (voto === 3) {
+                chapa3++;
+            } else {
+                nulos++;
+            }
+            
+            total_votos = chapa1 + chapa2 + chapa3 + nulos;
+            atualizarResultado();
+            
+            if (voto !== 0) {
+                realizarVotacao();
+            }
+        }
+        
+        realizarVotacao();
+    </script>
+
+    <!--EXPLICACAO 4 - DA FUNÇÃO Função realizarVotacao()
+        Esta função implementa a lógica para coletar votos dos usuários e atualizar os resultados. Ela utiliza a função prompt() para coletar o voto do usuário e, em seguida, toma uma ação com base no voto fornecido. Aqui está o que a função faz:
+
+        Usa prompt() para solicitar ao usuário que escolha um candidato digitando 1 ou 2, ou vote em branco digitando 3. Qualquer outro número é considerado um voto nulo.
+        Dependendo do voto fornecido, atualiza as variáveis candidato_a, candidato_b, brancos ou nulos.
+        Atualiza a variável total_votos somando todas as opções de voto.
+        Chama a função atualizarResultado() para exibir os resultados atualizados na página.
+        Se o voto não for 0 (encerramento da votação), chama recursivamente a função realizarVotacao() para coletar mais votos.
+        Essa estrutura recursiva permite que o programa continue coletando votos até que o usuário decida encerrar a votação digitando 0. Nesse ponto, a função atualizarResultado() é chamada para exibir os resultados finais.
+    -->
+</body>
+</html><!--P. Rodrigo Georgino, para o 3ºNOVOTEC, Escola IVONY DE CAMARGO SALLES-->
