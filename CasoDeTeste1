@@ -1,0 +1,14 @@
+Caso de teste 1
+Resumo:  Teste de unidade: a pessoa clica 50 vezes nos grupos chapa1, chapa2 e chapa3; os grupos escolhidos, recebão 50 votos cada. com objeitvo que o programa mande votos corretamente.
+
+ Um teste de unidade é um teste automatizado que verifica se uma unidade de código(botao votar) funciona corretamente.
+
+
+
+Pré-condições:nao haja voto no sistema
+
+Entrada:eleitor 1,  vota 50 vezes na chapa 1, eleitor 2 vota 50 vezes na chapa 2, eleitor 3 vota 50 vezes na chapa 3
+
+Pós-condições	: a chapa 1 deve ter 50 votos, a chapa 2 deve ter 50 votos e a chapa 3 deve ter 50 votos
+
+
