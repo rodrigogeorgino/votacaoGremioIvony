@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"><title>Sistema de Votação Ivoni Camargo Salles</title>
+    <meta charset="UTF-8"><title>Sistema de Votação Ivony Camargo Salles</title>
     <style type="text/css">/*espaço para CSS usei o blink como exemplo*/
         .blink {
                   animation: blink 1s steps(1, end) infinite;
