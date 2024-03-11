@@ -1,0 +1,15 @@
+Caso teste 3
+
+Resumo:Verificar para que o programa vão nos conformes e que não haja bugs
+
+Pré-Condições: Que o programa esteja aberto para o uso do usuarios
+
+Entradas:Após digitar espera-se que não tenha nenhum voto
+
+Ação: o usuário deve escolher a chapa em quem quer votar ou se não gostar da proposta de nenhuma chapa vote nulo e confirmar seu voto.
+
+Resultados esperados: Esperamos que ele guarde/armazene os dados e 
+que atenda os resultados.
+
+Pós-condições:Após col0car todos os dados e confirmar o seu voto, será zerado para
+que um novo usuario possa votar e fazer o mesmo novamente.
