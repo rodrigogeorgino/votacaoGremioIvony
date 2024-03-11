@@ -1,39 +1,44 @@
 #include <iostream> //Para usar o cout, você precisa incluir a biblioteca iostream no início do seu programa. Isso é feito usando a diretiva #include <iostream>
-#include <windows.h> // Inclui a biblioteca windows.h para utilizar a função Beep()
+#include <windows.h> //Inclui a biblioteca windows.h para utilizar a função Beep()
 using namespace std;
 
 int main() {
-    int candidato_a = 0, candidato_b = 0;
-    int brancos = 0, nulos = 0, total_votos = 0;
-    double porcentagem_candidato_a, porcentagem_candidato_b;
-    double porcentagem_brancos, porcentagem_nulos;
+    int chapa1 = 0, 
+    chapa2 = 0;
+    int chapa3 = 0, 
+    nulos = 0, 
+    total_votos = 0;
+    double porcentagem_chapa1, porcentagem_chapa2;
+    double porcentagem_chapa3, porcentagem_nulos;
     int voto;
 
     do {
-        system("cls"); // Limpa a tela (para sistemas Unix)
-        cout << "Escolha seu candidato ou tecle zero para encerrar\n\n";
-        cout << "  1 -> Candidato A\n"; //No cout O operador << é conhecido como o operador de inserção ou operador de fluxo de saída. Ele é usado para enviar dados para o objeto cout.
-        cout << "  2 -> Candidato B\n";
-        cout << "  3 -> Branco\n\n";
-        cout << "Qualquer numero diferente de 0, 1, 2 e 3 anulara o seu voto\n";
+        system("cls"); //Limpa a tela (para sistemas Unix)
+        cout << "Escolha sua chapa!\n\n";
+        cout << "  1 -> Chapa 1\n"; //No cout O operador << é conhecido como o operador de inserção ou operador de fluxo de saída. Ele é usado para enviar dados para o objeto cout.
+        cout << "  2 -> Chapa 2\n";
+        cout << "  3 -> chapa 3\n\n";
+        cout << "Qualquer numero diferente de 1, 2 e 3 anulara o seu voto\n";
         cout << "Digite seu voto: ";
         cin >> voto;
         system("cls"); // Limpa a tela (para sistemas Unix)
 
         switch (voto) {
-            case 0:
+            case 99:
                 cout << "Votação encerrada!\n";
                 break;
             case 1:
-                candidato_a++;
+                chapa1++;
                 Beep(1000, 500); // Emite um beep de 500 milissegundos com frequência de 1000 Hz para cada voto no candidato A
 
                 break;
             case 2:
-                candidato_b++;
+                chapa2++;
+                Beep(1000, 500);
                 break;
             case 3:
-                brancos++;
+                chapa3++;
+                Beep(1000, 500;
                 break;
             default:
                 nulos++;
@@ -41,18 +46,18 @@ int main() {
         }
     } while (voto != 0);
 
-    total_votos = candidato_a + candidato_b + brancos + nulos;
+    total_votos = chapa1 + chapa2 + chapa3 + nulos;
 
     if (total_votos > 0) {
-        porcentagem_candidato_a = (candidato_a * 100.0) / total_votos;
-        porcentagem_candidato_b = (candidato_b * 100.0) / total_votos;
-        porcentagem_brancos = (brancos * 100.0) / total_votos;
+        porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
+        porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
+        porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
         porcentagem_nulos = (nulos * 100.0) / total_votos;
 
         cout << "\nTotal de votos: " << total_votos << "\n\n";
-        cout << "Candidato A: " << candidato_a << " voto(s). " << porcentagem_candidato_a << " % do total\n";
-        cout << "Candidato B: " << candidato_b << " voto(s). " << porcentagem_candidato_b << " % do total\n";
-        cout << "Brancos: " << brancos << " voto(s). " << porcentagem_brancos << " % do total\n";
+        cout << "Chapa 1: " << chapa1 << " voto(s). " << porcentagem_chapa1 << " % do total\n";
+        cout << "Chapa 2: " << chapa2 << " voto(s). " << porcentagem_chapa2 << " % do total\n";
+        cout << "Chapa 3: " << chapa3 << " voto(s). " << porcentagem_chapa3 << " % do total\n";
         cout << "Nulos: " << nulos << " voto(s). " << porcentagem_nulos << " % do total\n";
     }
 
