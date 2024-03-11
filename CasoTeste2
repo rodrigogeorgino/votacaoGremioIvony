@@ -1,0 +1,14 @@
+Caso teste 2
+Resumo:Verificar se não ha bugs no sistema, ou algo parecido.
+
+Pré-Condições: Finalizar sem voto nenhum
+
+Entradas:Apos digitar e esperar que na haja votos nenhum
+
+Ação: primeiramente o usuário devera inserir seu nome, série, escolher a chapa em quem quer votar e confirmar seu voto.
+
+Resultados esperados: Espero que ele armazene dados e 
+que atenda os resultados esperados.
+
+Pós-condições:Após as inserção dos dados será zerado para
+que um novo usuario possa votar.
