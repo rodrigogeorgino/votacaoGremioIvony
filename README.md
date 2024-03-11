@@ -1,3 +1,5 @@
 # votacaoGremioIvony
-Sistema de urna eletrônica. Para ser utilizado no processo de seleção de chapa do grêmio estudantil. Da escola E. E. Ivony de Camargo Salles. Itatiba 2024.
+Sistema de urna eletrônica. 
+Sistema utilizado no processo de escolha da chapa, do grêmio estudantil, do ano de 2024. 
+Escola E. E. Ivony de Camargo Salles. Itatiba 2024.
 #Urna Eletrônica
