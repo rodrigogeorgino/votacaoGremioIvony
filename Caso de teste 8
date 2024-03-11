@@ -1,8 +1,8 @@
 Caso de teste 8
 
-Resumo: certificar que a pagina fique em branco quando apertar apenas encerramento sem votar
+Resumo: certificar que o número apareça 0 quando apertar apenas encerramento, sem votar
 
-Um teste de unidade é um teste automatizado que verifica se após apertar encerramento o campo de voto ficaria vazio
+Um teste de unidade é um teste manual que verifica se após apertar encerramento o campo de voto ficaria com um número 0(zero)
 
 
 
