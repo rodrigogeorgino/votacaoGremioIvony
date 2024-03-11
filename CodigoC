@@ -38,7 +38,7 @@ int main() {
 		Beep(1000, 500);
                 break;
         }
-    } while (voto != 0);
+    } while (voto != 99);
     total_votos = chapa1 + chapa2 + chapa3 + nulos;
     if (total_votos > 0) {
         porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
