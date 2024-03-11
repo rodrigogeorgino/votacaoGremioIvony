@@ -13,7 +13,7 @@ int main() {
         cout << "  1 -> Chapa 1\n"; //No cout O operador << é conhecido como o operador de inserção ou operador de fluxo de saída. Ele é usado para enviar dados para o objeto cout.
         cout << "  2 -> Chapa 2\n";
         cout << "  3 -> Chapa 3\n\n";
-        cout << "Qualquer numero diferente de 1, 2 e 3 anulara o seu voto\n";
+        cout << "Qualquer numero diferente de 1, 2 e 3 anulará o seu voto\n";
         cout << "Digite seu voto: ";
         cin >> voto;
         system("cls"); // Limpa a tela (para sistemas Unix)
