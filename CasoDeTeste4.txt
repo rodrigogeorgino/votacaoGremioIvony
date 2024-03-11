@@ -1,0 +1,14 @@
+Caso teste 4
+
+Resumo:Verificar possiveis bugs no sistema.
+
+Pré-Condições:Finalizar sem nenhum voto.
+
+Entradas:Tentativa de voto em uma chapa inexistente.
+
+Ação: O user deve inserir a numerção de alguma chapa que não existe e confirmar o voto.
+
+Resultados esperados: Resultado em 1 voto catalogado e nenhuma chapa votada.
+
+
+Pós-condições: Após votado tudo ocorreu como o esperado, nenhuma chapa votada e voto catalogado no sistema,pronto para que outra pessoa vote.
