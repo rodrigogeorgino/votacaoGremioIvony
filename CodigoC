@@ -3,7 +3,8 @@
 using namespace std;
 int main() {
     int chapa1 = 0, chapa2 = 0;
-    int chapa3 = 0, int chapa4 = 0, nulos = 0, total_votos = 0;
+    int chapa3 = 0, chapa4 = 0;
+    int nulos = 0, total_votos = 0;
     double porcentagem_chapa1, porcentagem_chapa2;
     double porcentagem_chapa3, porcentagem_chapa4, porcentagem_nulos;
     int voto;
@@ -34,9 +35,9 @@ int main() {
                 chapa3++;
 		Beep(1000, 500);
                 break;
-	    case 4:
+	        case 4:
                 chapa4++;
-                Beep(1000, 500); // Emite um beep de 500 milissegundos com frequência de 1000 Hz para cada voto na chapa 1
+                //Beep(1000, 500); // Emite um beep de 500 milissegundos com frequência de 1000 Hz para cada voto na chapa 1
                 break;
             default:
                 nulos++;
@@ -49,7 +50,7 @@ int main() {
         porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
         porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
         porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
-	porcentagem_chapa4 = (chapa4 * 100.0) / total_votos;
+        porcentagem_chapa4 = (chapa4 * 100.0) / total_votos;
         porcentagem_nulos = (nulos * 100.0) / total_votos;
         cout << "\nTotal de votos: " << total_votos << "\n\n";
         cout << "Chapa 1: " << chapa1 << " voto(s). " << porcentagem_chapa1 << " % do total\n";
