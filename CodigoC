@@ -3,17 +3,18 @@
 using namespace std;
 int main() {
     int chapa1 = 0, chapa2 = 0;
-    int chapa3 = 0, nulos = 0, total_votos = 0;
+    int chapa3 = 0, int chapa4 = 0, nulos = 0, total_votos = 0;
     double porcentagem_chapa1, porcentagem_chapa2;
-    double porcentagem_chapa3, porcentagem_nulos;
+    double porcentagem_chapa3, porcentagem_chapa4, porcentagem_nulos;
     int voto;
     do {
         system("cls"); // Limpa a tela (para sistemas Unix)
         cout << "Escolha sua Chapa:\n\n";
         cout << "  1 -> Chapa 1\n"; //No cout O operador << é conhecido como o operador de inserção ou operador de fluxo de saída. Ele é usado para enviar dados para o objeto cout.
         cout << "  2 -> Chapa 2\n";
-        cout << "  3 -> Chapa 3\n\n";
-        cout << "Qualquer numero diferente de 1, 2 e 3 anulará o seu voto\n";
+        cout << "  3 -> Chapa 3\n";
+	cout << "  4 -> Chapa 4\n";
+        cout << "Qualquer numero diferente de 1, 2, 3 ou 4 anulará o seu voto\n";
         cout << "Digite seu voto: ";
         cin >> voto;
         system("cls"); // Limpa a tela (para sistemas Unix)
@@ -33,22 +34,28 @@ int main() {
                 chapa3++;
 		Beep(1000, 500);
                 break;
+	    case 4:
+                chapa4++;
+                Beep(1000, 500); // Emite um beep de 500 milissegundos com frequência de 1000 Hz para cada voto na chapa 1
+                break;
             default:
                 nulos++;
 		Beep(1000, 500);
                 break;
         }
     } while (voto != 99);
-    total_votos = chapa1 + chapa2 + chapa3 + nulos;
+    total_votos = chapa1 + chapa2 + chapa3 + chapa4 + nulos;
     if (total_votos > 0) {
         porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
         porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
         porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
+	porcentagem_chapa4 = (chapa4 * 100.0) / total_votos;
         porcentagem_nulos = (nulos * 100.0) / total_votos;
         cout << "\nTotal de votos: " << total_votos << "\n\n";
         cout << "Chapa 1: " << chapa1 << " voto(s). " << porcentagem_chapa1 << " % do total\n";
         cout << "Chapa 2 " << chapa2 << " voto(s). " << porcentagem_chapa2 << " % do total\n";
         cout << "Chapa 3: " << chapa3 << " voto(s). " << porcentagem_chapa3 << " % do total\n";
+	cout << "Chapa 4: " << chapa4 << " voto(s). " << porcentagem_chapa4 << " % do total\n";
         cout << "Nulos: " << nulos << " voto(s). " << porcentagem_nulos << " % do total\n";
     }
     return 0;
