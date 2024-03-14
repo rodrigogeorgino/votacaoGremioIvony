@@ -37,7 +37,7 @@ int main() {
                 break;
 	        case 4:
                 chapa4++;
-                //Beep(1000, 500); // Emite um beep de 500 milissegundos com frequência de 1000 Hz para cada voto na chapa 1
+                Beep(1000, 500); // Emite um beep de 500 milissegundos com frequência de 1000 Hz para cada voto na chapa 1
                 break;
             default:
                 nulos++;
