@@ -40,10 +40,10 @@
             let output = document.getElementById("output");
             output.innerHTML = `
                 <p>Total de votos: ${total_votos}</p>
-                <p>Candidato A (chapa1): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
-                <p>Candidato B (chapa2): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
-                <p>Candidato C (chapa3): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
-                <p>Candidato D (chapa4): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
+                <p>Candidato A (Unidos pelo Progresso): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                <p>Candidato B (Inova): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                <p>Candidato C (Transformação): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                <p>Candidato D (Nova Era): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
                 <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
                 <p>-------------<br><b>Sistema de votação</b><br><span class="blink"> 3ºNOVOTEC</span> Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
                 <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
