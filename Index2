@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"><title>Sistema de Votação Ivony Camargo Salles</title>
+    <style type="text/css">/*espaço para CSS usei o blink como exemplo*/
+        .blink {
+                  animation: blink 1s steps(1, end) infinite;
+                }
+
+                @keyframes blink {
+                  0% {
+                    opacity: 1;
+                  }
+                  50% {
+                    opacity: 0;
+                  }
+                  100% {
+                    opacity: 1;
+                  }
+                }
+    </style>
+</head>
+<body>
+    <h1>Resultado da Votação </h1>
+    <div id="output"></div>
+    <script>
+        let chapa1 = 0;
+        let chapa2 = 0;
+        let chapa3 = 0;
+        let chapa4 = 0;
+        let nulos = 0;
+        let total_votos = 0;
+
+        function atualizarResultado() {
+            let porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
+            let porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
+            let porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
+            let porcentagem_chapa4 = (chapa4 * 100.0) / total_votos;
+            let porcentagem_nulos = (nulos * 100.0) / total_votos;
+            let output = document.getElementById("output");
+            output.innerHTML = `
+                <p>Total de votos: ${total_votos}</p>
+                <p>Candidato A (chapa1): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                <p>Candidato B (chapa2): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                <p>Candidato C (chapa3): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                <p>Candidato D (chapa4): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
+                <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
+                <p>-------------<br><b>Sistema de votação</b><br><span class="blink"> 3ºNOVOTEC</span> Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
+                <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
+                `;
+                                        }/*atualizado resultado :) */
+        function realizarVotacao() {
+            let voto = parseInt(prompt("Escolha seu candidato:\n\n1 -> Chapa1\n2 -> Chapa2\n3 -> Chapa3\n4 -> Chapa4\nQualquer número diferente de 1, 2, 3 ou 4 anulará o seu voto!"));
+            
+            if (voto === 99) {
+                alert("Votação encerrada!");
+            } else if (voto == 1) {
+                chapa1++;
+            } else if (voto == 2) {
+                chapa2++;
+            } else if (voto == 3) {
+                chapa3++;
+            } else if (voto == 4) {
+                chapa4++;
+            } else {
+                nulos++;
+            } 
+            total_votos = chapa1 + chapa2 + chapa3 + chapa4 + nulos;
+            atualizarResultado();   
+            if (voto !== 99) {
+                realizarVotacao();
+            }
+        }
+        realizarVotacao();
+    </script>
+</body>
+</html><!--P. Rodrigo Georgino, para o 3ºNOVOTEC, Escola IVONY DE CAMARGO SALLES-->
