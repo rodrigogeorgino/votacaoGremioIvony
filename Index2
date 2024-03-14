@@ -50,7 +50,7 @@
                 `;
                                         }/*atualizado resultado :) */
         function realizarVotacao() {
-            let voto = parseInt(prompt("Escolha seu candidato:\n\n1 -> Chapa1\n2 -> Chapa2\n3 -> Chapa3\n4 -> Chapa4\nQualquer número diferente de 1, 2, 3 ou 4 anulará o seu voto!"));
+            let voto = parseInt(prompt("Escolha seu candidato:\n\n1 -> Unidos pelo Progresso\n2 -> Inova\n3 -> Transformação\n4 -> Nova Era\nQualquer número diferente de 1, 2, 3 ou 4 anulará o seu voto!"));
             
             if (voto === 99) {
                 alert("Votação encerrada!");
