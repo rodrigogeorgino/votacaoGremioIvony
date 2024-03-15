@@ -52,6 +52,7 @@
                 <p>---- <b>Sistema de Votação 2024</b>----
                 <br><b>E. E. Ivony de Camargo Salles</b>
                 <br><small>Turma Votante: ${nomeTurma}</small> <!-- Adicionando o nome da turma aqui -->
+                </br><small>Tutoria: Profº Rodrigo Georgino
                 <br><small>Colaboradores: <a href="https://github.com/rodrigogeorgino/votacaoGremioIvony" target="blank">Código Fonte - GitHub</a></small></p>
                 `;
         }
