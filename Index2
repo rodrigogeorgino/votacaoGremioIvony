@@ -43,10 +43,10 @@
             let output = document.getElementById("output");
             output.innerHTML = `
                 <h1>Total de votos: ${total_votos}</h1>
-                <p>Candidato A (Unidos pelo Progresso): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
-                <p>Candidato B (Inova): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
-                <p>Candidato C (Transformação): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
-                <p>Candidato D (Nova Era): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
+                <p>Chapa 1 (Unidos pelo Progresso): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                <p>Chapa 2 (Inova): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                <p>Chapa 3 (Transformação): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                <p>Chapa 4 (Nova Era): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
                 <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
                 <p><form><input type="button" class="botao" value="Imprimir Resultado - PDF " onClick="window.print()"/ title="Intruções de Impressão: (Imprimir o Cabeçalho e o Rodapé!)"></form><hr></p> 
                 <p>---- <b>Sistema de Votação 2024</b>----
@@ -56,7 +56,7 @@
                 `;
         }
 
-        // Função para realizar a votação
+        // Função para realizar a votação + adicionado a função de solicitar nome da Turma Votante
         function realizarVotacao() {
             nomeTurma = prompt("Digite o nome da turma que está iniciando a votação:");
             let voto;
