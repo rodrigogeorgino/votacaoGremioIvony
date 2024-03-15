@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"><title>Sistema de Votação Ivony Camargo Salles</title>
+    <meta charset="UTF-8">
+    <title>Sistema de Votação Ivoni Camargo Salles</title>
+    <style type="text/css">
+        .body {
+            font-family: sans-serif; 
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .botao {
+            font-size: large;
+            background-color: #e4e4e3;
+            border: aliceblue;
+            padding: 2%;
+            float: inline-end;
+        }
+    </style>
 </head>
-<body>
-    <h1>Resultado da Votação </h1>
+<body class="body">
+    <h1 style="background-color: #faf6f6; padding:2%;">Resultado da Votação </h1>
+
     <div id="output"></div>
+
     <script>
         let chapa1 = 0;
         let chapa2 = 0;
@@ -13,48 +30,68 @@
         let chapa4 = 0;
         let nulos = 0;
         let total_votos = 0;
+        let nomeTurma = ''; // Variável para armazenar o nome da turma
 
+        // Função para atualizar o resultado da votação
         function atualizarResultado() {
             let porcentagem_chapa1 = (chapa1 * 100.0) / total_votos;
             let porcentagem_chapa2 = (chapa2 * 100.0) / total_votos;
             let porcentagem_chapa3 = (chapa3 * 100.0) / total_votos;
             let porcentagem_chapa4 = (chapa4 * 100.0) / total_votos;
             let porcentagem_nulos = (nulos * 100.0) / total_votos;
+            
             let output = document.getElementById("output");
             output.innerHTML = `
-                <p>Total de votos: ${total_votos}</p>
-                <p>Chapa 1 (Unidos pelo Progresso): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
-                <p>Chapa 2 (Inova): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
-                <p>Chapa 3 (Transformação): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
-                <p>Chapa 4 (Nova Era): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
+                <h1>Total de votos: ${total_votos}</h1>
+                <p>Candidato A (Unidos pelo Progresso): ${chapa1} voto(s). ${porcentagem_chapa1.toFixed(2)} % do total</p>
+                <p>Candidato B (Inova): ${chapa2} voto(s). ${porcentagem_chapa2.toFixed(2)} % do total</p>
+                <p>Candidato C (Transformação): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
+                <p>Candidato D (Nova Era): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
                 <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
-                <p>-------------<br><b>Sistema de votação</b><br>3ºNOVOTEC Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
-                <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
+                <p><form><input type="button" class="botao" value="Imprimir Resultado - PDF " onClick="window.print()"/ title="Intruções de Impressão: (Imprimir o Cabeçalho e o Rodapé!)"></form><hr></p> 
+                <p>---- <b>Sistema de Votação 2024</b>----
+                <br><b>E. E. Ivony de Camargo Salles</b>
+                <br><small>Turma Votante: ${nomeTurma}</small> <!-- Adicionando o nome da turma aqui -->
+                <br><small>Colaboradores: <a href="https://github.com/rodrigogeorgino/votacaoGremioIvony" target="blank">Código Fonte - GitHub</a></small></p>
                 `;
-                                        }/*atualizado resultado :) */
-        function realizarVotacao() {
-            let voto = parseInt(prompt("Escolha sua chapa:\n\n1 -> Unidos pelo Progresso\n2 -> Inova\n3 -> Transformação\n4 -> Nova Era\nQualquer número diferente de 1, 2, 3 ou 4 anulará o seu voto!"));
-            
-            if (voto === 99) {
-                alert("Votação encerrada!");
-            } else if (voto == 1) {
-                chapa1++;
-            } else if (voto == 2) {
-                chapa2++;
-            } else if (voto == 3) {
-                chapa3++;
-            } else if (voto == 4) {
-                chapa4++;
-            } else {
-                nulos++;
-            } 
-            total_votos = chapa1 + chapa2 + chapa3 + chapa4 + nulos;
-            atualizarResultado();   
-            if (voto !== 99) {
-                realizarVotacao();
-            }
         }
+
+        // Função para realizar a votação
+        function realizarVotacao() {
+            nomeTurma = prompt("Digite o nome da turma que está iniciando a votação:");
+            let voto;
+            do {
+                voto = parseInt(prompt("Escolha seu candidato:\n\n1 -> Unidos pelo Progresso\n2 -> Inova\n3 -> Transformação\n4 -> Nova Era\nQualquer número diferente de 1, 2, 3 ou 4 anulará o seu voto!\n"));
+                if (voto === 99) {
+                    alert("Votação encerrada!");
+                    alert('Atenção!!! Clique em imprimir o resultado');
+                    atualizarResultado();
+                    break;
+                } else if (voto >= 1 && voto <= 4) {
+                    switch (voto) {
+                        case 1:
+                            chapa1++;
+                            break;
+                        case 2:
+                            chapa2++;
+                            break;
+                        case 3:
+                            chapa3++;
+                            break;
+                        case 4:
+                            chapa4++;
+                            break;
+                    }
+                } else {
+                    nulos++;
+                }
+                    total_votos = chapa1 + chapa2 + chapa3 + chapa4 + nulos;
+
+            atualizarResultado();
+            } while (voto !== 99);
+        }
+
         realizarVotacao();
     </script>
 </body>
-</html><!--P. Rodrigo Georgino, para o 3ºNOVOTEC, Escola IVONY DE CAMARGO SALLES-->
+</html>
