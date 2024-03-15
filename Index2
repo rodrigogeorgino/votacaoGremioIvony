@@ -2,23 +2,6 @@
 <html>
 <head>
     <meta charset="UTF-8"><title>Sistema de Votação Ivony Camargo Salles</title>
-    <style type="text/css">/*espaço para CSS usei o blink como exemplo*/
-        .blink {
-                  animation: blink 1s steps(1, end) infinite;
-                }
-
-                @keyframes blink {
-                  0% {
-                    opacity: 1;
-                  }
-                  50% {
-                    opacity: 0;
-                  }
-                  100% {
-                    opacity: 1;
-                  }
-                }
-    </style>
 </head>
 <body>
     <h1>Resultado da Votação </h1>
@@ -45,7 +28,7 @@
                 <p>Candidato C (Transformação): ${chapa3} voto(s). ${porcentagem_chapa3.toFixed(2)} % do total</p>
                 <p>Candidato D (Nova Era): ${chapa4} voto(s). ${porcentagem_chapa4.toFixed(2)} % do total</p>
                 <p>Nulos: ${nulos} voto(s). ${porcentagem_nulos.toFixed(2)} % do total</p>
-                <p>-------------<br><b>Sistema de votação</b><br><span class="blink"> 3ºNOVOTEC</span> Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
+                <p>-------------<br><b>Sistema de votação</b><br>3ºNOVOTEC Ivony Camargo Salles</b><br>Tutor: Rodrigo Georgino</p>
                 <p><form><input type="button" value="Imprimir esta página" onClick="window.print()"/></form></p>          
                 `;
                                         }/*atualizado resultado :) */
